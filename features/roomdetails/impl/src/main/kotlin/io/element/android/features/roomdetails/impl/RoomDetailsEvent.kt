@@ -18,4 +18,5 @@ package io.element.android.features.roomdetails.impl
 
 sealed interface RoomDetailsEvent {
     object LeaveRoom : RoomDetailsEvent
+    object MuteNotification : RoomDetailsEvent
 }
