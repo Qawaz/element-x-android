@@ -32,6 +32,7 @@ import io.element.android.libraries.architecture.Async
 import io.element.android.libraries.architecture.Presenter
 import io.element.android.libraries.architecture.execute
 import io.element.android.libraries.designsystem.components.avatar.AvatarData
+import io.element.android.libraries.designsystem.components.avatar.AvatarSize
 import io.element.android.libraries.matrix.api.MatrixClient
 import io.element.android.libraries.matrix.api.core.RoomId
 import io.element.android.libraries.matrix.api.room.RoomSummary
@@ -153,12 +154,14 @@ class InviteListPresenter @Inject constructor(
                 id = i.userId.value,
                 name = i.displayName,
                 url = i.avatarUrl,
+                size = AvatarSize.RoomListItem,
             )
         else
             AvatarData(
                 id = roomId.value,
                 name = name,
-                url = avatarURLString
+                url = avatarURLString,
+                size = AvatarSize.RoomListItem,
             )
 
         val alias = if (isDirect)
@@ -181,6 +184,7 @@ class InviteListPresenter @Inject constructor(
                         id = userId.value,
                         name = displayName,
                         url = avatarUrl,
+                        size = AvatarSize.InviteSender,
                     ),
                 )
             },
