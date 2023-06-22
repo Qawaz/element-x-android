@@ -23,7 +23,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 
 @Stable
-class ElementColors(
+class ElementColors constructor(
     messageFromMeBackground: Color,
     messageFromOtherBackground: Color,
     messageHighlightedBackground: Color,
@@ -50,7 +50,7 @@ class ElementColors(
     var quinary by mutableStateOf(quinary)
         private set
 
-    var gray300 by mutableStateOf(gray400)
+    var gray300 by mutableStateOf(gray300)
         private set
 
     var gray400 by mutableStateOf(gray400)
