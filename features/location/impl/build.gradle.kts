@@ -31,6 +31,10 @@ anvil {
 
 dependencies {
     implementation(libs.dagger)
+    anvil(projects.anvilcodegen)
+    implementation(projects.libraries.architecture)
+    implementation(projects.libraries.matrix.api)
+    implementation(projects.anvilannotations)
     api(projects.features.location.api)
     implementation(projects.libraries.di)
     implementation(projects.libraries.designsystem)

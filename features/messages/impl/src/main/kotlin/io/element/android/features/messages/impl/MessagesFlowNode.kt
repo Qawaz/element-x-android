@@ -29,6 +29,7 @@ import com.bumble.appyx.navmodel.backstack.operation.push
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import io.element.android.anvilannotations.ContributesNode
+import io.element.android.features.location.api.SendLocationEntryPoint
 import io.element.android.features.messages.api.MessagesEntryPoint
 import io.element.android.features.messages.impl.attachments.Attachment
 import io.element.android.features.messages.impl.attachments.preview.AttachmentsPreviewNode
@@ -55,6 +56,7 @@ import kotlinx.parcelize.Parcelize
 class MessagesFlowNode @AssistedInject constructor(
     @Assisted buildContext: BuildContext,
     @Assisted plugins: List<Plugin>,
+    private val sendLocationEntryPoint: SendLocationEntryPoint,
 ) : BackstackNode<MessagesFlowNode.NavTarget>(
     backstack = BackStack(
         initialElement = NavTarget.Messages,
@@ -83,6 +85,9 @@ class MessagesFlowNode @AssistedInject constructor(
 
         @Parcelize
         data class ForwardEvent(val eventId: EventId) : NavTarget
+
+        @Parcelize
+        object SendLocation : NavTarget
     }
 
     private val callback = plugins<MessagesEntryPoint.Callback>().firstOrNull()
@@ -114,6 +119,10 @@ class MessagesFlowNode @AssistedInject constructor(
                     override fun onForwardEventClicked(eventId: EventId) {
                         backstack.push(NavTarget.ForwardEvent(eventId))
                     }
+
+                    override fun onSendLocationClicked() {
+                        backstack.push(NavTarget.SendLocation)
+                    }
                 }
                 createNode<MessagesNode>(buildContext, listOf(callback))
             }
@@ -141,6 +150,9 @@ class MessagesFlowNode @AssistedInject constructor(
                     }
                 }
                 createNode<ForwardMessagesNode>(buildContext, listOf(inputs, callback))
+            }
+            NavTarget.SendLocation -> {
+                sendLocationEntryPoint.createNode(this, buildContext)
             }
         }
     }

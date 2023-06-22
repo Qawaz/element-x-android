@@ -31,6 +31,7 @@ anvil {
 
 dependencies {
     implementation(libs.dagger)
+    implementation(projects.libraries.architecture)
     implementation(projects.libraries.designsystem)
     implementation(projects.libraries.network)
     implementation(projects.libraries.core)
