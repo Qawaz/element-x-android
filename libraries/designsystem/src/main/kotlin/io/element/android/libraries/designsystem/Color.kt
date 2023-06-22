@@ -80,6 +80,8 @@ val Compound_Gray_300_Dark = Color(0xFF1D1F24)
 val Compound_Gray_400_Light = Color(0xFFE1E6EC)
 val Compound_Gray_400_Dark = Color(0xFF26282D)
 
+val Compound_Gray_500_Dark = Color(0xFF323539)
+
 val Compound_Gray_800_Light = Color(0xFF818A95)
 val Compound_Gray_800_Dark = Color(0xFF656C76)
 

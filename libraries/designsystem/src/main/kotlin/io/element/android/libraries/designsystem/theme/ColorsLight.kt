@@ -22,23 +22,21 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import io.element.android.libraries.designsystem.Azure
 import io.element.android.libraries.designsystem.Black_900
+import io.element.android.libraries.designsystem.Compound_Gray_1400_Light
 import io.element.android.libraries.designsystem.Compound_Gray_300_Light
 import io.element.android.libraries.designsystem.Compound_Gray_400_Light
 import io.element.android.libraries.designsystem.Compound_Gray_800_Light
 import io.element.android.libraries.designsystem.Gray_100
-import io.element.android.libraries.designsystem.Compound_Gray_1400_Light
 import io.element.android.libraries.designsystem.Gray_150
 import io.element.android.libraries.designsystem.Gray_200
 import io.element.android.libraries.designsystem.Gray_25
 import io.element.android.libraries.designsystem.Gray_50
-import io.element.android.libraries.designsystem.SystemGrey5Light
-import io.element.android.libraries.designsystem.SystemGrey6Light
 import io.element.android.libraries.designsystem.TextColorCriticalLight
 import io.element.android.libraries.designsystem.theme.previews.ColorsSchemePreview
 
 fun elementColorsLight() = ElementColors(
-    messageFromMeBackground = SystemGrey5Light,
-    messageFromOtherBackground = SystemGrey6Light,
+    messageFromMeBackground = Compound_Gray_400_Light,
+    messageFromOtherBackground = Compound_Gray_300_Light,
     messageHighlightedBackground = Azure,
     quaternary = Gray_100,
     quinary = Gray_50,
