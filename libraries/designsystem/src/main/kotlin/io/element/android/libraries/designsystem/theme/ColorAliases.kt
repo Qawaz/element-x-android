@@ -20,8 +20,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import io.element.android.libraries.designsystem.SystemGrey4Dark
-import io.element.android.libraries.designsystem.SystemGrey6Light
+import io.element.android.libraries.designsystem.Compound_Gray_300_Dark
+import io.element.android.libraries.designsystem.Compound_Gray_300_Light
 import io.element.android.libraries.designsystem.preview.ElementPreviewDark
 import io.element.android.libraries.designsystem.preview.ElementPreviewLight
 import io.element.android.libraries.designsystem.theme.previews.ColorListPreview
@@ -43,7 +43,7 @@ fun MaterialTheme.roomListRoomMessageDate() = colorScheme.secondary
 fun MaterialTheme.roomListUnreadIndicator() = colorScheme.primary
 
 @Composable
-fun ElementColors.roomListPlaceHolder() = if (isLight) SystemGrey6Light else SystemGrey4Dark
+fun ElementColors.roomListPlaceHolder() = if (isLight) Compound_Gray_300_Light else Compound_Gray_300_Dark
 
 @Preview
 @Composable
