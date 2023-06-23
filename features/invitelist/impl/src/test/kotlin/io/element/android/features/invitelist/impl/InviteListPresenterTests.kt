@@ -23,6 +23,7 @@ import com.google.common.truth.Truth
 import io.element.android.features.invitelist.test.FakeSeenInvitesStore
 import io.element.android.libraries.architecture.Async
 import io.element.android.libraries.designsystem.components.avatar.AvatarData
+import io.element.android.libraries.designsystem.components.avatar.AvatarSize
 import io.element.android.libraries.matrix.api.core.RoomId
 import io.element.android.libraries.matrix.api.room.RoomMember
 import io.element.android.libraries.matrix.api.room.RoomMembershipState
@@ -35,8 +36,8 @@ import io.element.android.libraries.matrix.test.A_ROOM_NAME
 import io.element.android.libraries.matrix.test.A_USER_ID
 import io.element.android.libraries.matrix.test.A_USER_NAME
 import io.element.android.libraries.matrix.test.FakeMatrixClient
-import io.element.android.libraries.matrix.test.room.FakeRoomSummaryDataSource
 import io.element.android.libraries.matrix.test.room.FakeMatrixRoom
+import io.element.android.libraries.matrix.test.room.FakeRoomSummaryDataSource
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 
@@ -88,6 +89,7 @@ class InviteListPresenterTests {
                     id = A_USER_ID.value,
                     name = A_USER_NAME,
                     url = AN_AVATAR_URL,
+                    size = AvatarSize.RoomListItem,
                 )
             )
             Truth.assertThat(withInviteState.inviteList[0].sender).isNull()
@@ -115,6 +117,7 @@ class InviteListPresenterTests {
                     id = A_USER_ID.value,
                     name = A_USER_NAME,
                     url = AN_AVATAR_URL,
+                    size = AvatarSize.InviteSender,
                 )
             )
         }
