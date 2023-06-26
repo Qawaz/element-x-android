@@ -42,6 +42,7 @@ import io.element.android.libraries.designsystem.theme.components.Button
 import io.element.android.libraries.designsystem.theme.components.Icon
 import io.element.android.libraries.designsystem.theme.components.Surface
 import io.element.android.libraries.designsystem.theme.components.Text
+import io.element.android.libraries.ui.strings.R as StringR
 
 @Composable
 internal fun RequestVerificationHeader(
@@ -71,7 +72,7 @@ internal fun RequestVerificationHeader(
                     Icon(
                         modifier = Modifier.clickable(onClick = onDismissClicked),
                         imageVector = Icons.Default.Close,
-                        contentDescription = stringResource(io.element.android.libraries.ui.strings.R.string.action_close)
+                        contentDescription = stringResource(StringR.string.action_close)
                     )
                 }
                 Spacer(modifier = Modifier.height(4.dp))
@@ -86,7 +87,7 @@ internal fun RequestVerificationHeader(
                     onClick = onVerifyClicked,
                 ) {
                     Text(
-                        stringResource(io.element.android.libraries.ui.strings.R.string.action_continue),
+                        stringResource(StringR.string.action_continue),
                         style = ElementTextStyles.Button
                     )
                 }
